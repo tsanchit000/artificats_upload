@@ -28,6 +28,7 @@ jobs:
       - name: upload artifacts
         uses: actions/upload-artifact@v4
         with:
+          name: files_generated
           path: |
             dist
             package.json
@@ -41,7 +42,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: upload artifacts
-      - name: output arti
+      - name: files_generated
         run: ls
       - name: Deploy
         run: echo "Deploying..."
